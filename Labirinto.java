@@ -65,11 +65,8 @@ public class Labirinto {
             if(cavavel(atual.getX(), atual.getY() + 2))
                 fila.add(new Coordenada(atual.getX(), atual.getY() + 2));
 
-            int escolha = (int) (Math.random() * fila.size());
-
             if (fila.isEmpty())//Regressao
             {
-                System.out.println("aqui regress");
                 caminho.removaUmItem();
                 caminho.removaUmItem();
                 if(caminho.isVazia())
@@ -78,6 +75,7 @@ public class Labirinto {
                 atual = caminho.recupereUmItem();
                 continue;
             }
+            int escolha = (int) (Math.random() * fila.size());
 
             Coordenada entre = new Coordenada((atual.getX() + fila.get(escolha).getX())/2,
                                                 (atual.getY() + fila.get(escolha).getY())/2);
@@ -88,8 +86,6 @@ public class Labirinto {
             caminho.guardeUmItem(fila.get(escolha));
 
             atual = fila.get(escolha);
-            System.out.println("aqui def");
-
 
         }while (true);
         labirinto[saida.getY()][saida.getX()] = 'S';
@@ -97,7 +93,6 @@ public class Labirinto {
     }
 
     public boolean cavavel(int x, int y) {
-        System.out.println("aqui CAVAVEL?");
 
         try { if(x <= 0 || x >= largura-1) return false; }
         catch (IndexOutOfBoundsException exception) { return false; }
@@ -107,7 +102,6 @@ public class Labirinto {
     }
 
     public void cavar(Coordenada cord) {
-        System.out.println("aqui CAVAR");
         labirinto[cord.getY()][cord.getX()] = ' ';
 
     }
