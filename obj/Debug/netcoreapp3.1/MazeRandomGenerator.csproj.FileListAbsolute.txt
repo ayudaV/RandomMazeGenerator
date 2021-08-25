@@ -1,0 +1,16 @@
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.csproj.AssemblyReference.cache
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.csproj.GenerateResource.cache
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.AssemblyInfoInputs.cache
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.AssemblyInfo.cs
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.csproj.CoreCompileInputs.cache
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.exe
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.deps.json
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.runtimeconfig.json
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.runtimeconfig.dev.json
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.dll
+C:\Users\terad\source\repos\MazeRandomGenerator\bin\Debug\netcoreapp3.1\MazeRandomGenerator.pdb
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.dll
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.pdb
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.genruntimeconfig.cache
+C:\Users\terad\source\repos\MazeRandomGenerator\obj\Debug\netcoreapp3.1\MazeRandomGenerator.ExibicaoLabirinto.resources
