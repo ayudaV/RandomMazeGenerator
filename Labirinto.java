@@ -53,64 +53,61 @@ public class Labirinto {
         {
             ArrayList<Coordenada> fila = new ArrayList<>(3);
 
-            if(cavavel(atual.getX() - 1, atual.getY()))
-                fila.add(new Coordenada(atual.getX() - 1, atual.getY()));
+            if(cavavel(atual.getX() - 2, atual.getY()))
+                fila.add(new Coordenada(atual.getX() - 2, atual.getY()));
 
-            if(cavavel(atual.getX() + 1, atual.getY()))
-                fila.add(new Coordenada(atual.getX() + 1, atual.getY()));
+            if(cavavel(atual.getX() + 2, atual.getY()))
+                fila.add(new Coordenada(atual.getX() + 2, atual.getY()));
 
-            if(cavavel(atual.getX(), atual.getY() - 1))
-                fila.add(new Coordenada(atual.getX(), atual.getY() - 1));
+            if(cavavel(atual.getX(), atual.getY() - 2))
+                fila.add(new Coordenada(atual.getX(), atual.getY() - 2));
 
-            if(cavavel(atual.getX(), atual.getY() + 1))
-                fila.add(new Coordenada(atual.getX(), atual.getY() + 1));
+            if(cavavel(atual.getX(), atual.getY() + 2))
+                fila.add(new Coordenada(atual.getX(), atual.getY() + 2));
 
-            for(;;)
-            {
-                if(fila.isEmpty())
-                    break;
-
-                int escolha = (int) (Math.random() * fila.size());
-
-                Coordenada proximo = new Coordenada(atual.getX() + (fila.get(escolha).getX()-atual.getX()) * 2,
-                                                    atual.getY() + (fila.get(escolha).getY()-atual.getY()) * 2);
-
-                if(labirinto[proximo.getY()][proximo.getX()] == '#')
-                    //Se a coordenada a 2 casa de distancia da direcao escolhida for parede ele cava para essa direcao
-                {
-                    cavar(fila.get(escolha));
-                    cavar(proximo);
-
-                    caminho.guardeUmItem(fila.get(escolha));
-                    caminho.guardeUmItem(proximo);
-
-                    atual = proximo;
-                    break;
-                }
-                fila.remove(escolha);
-            }
+            int escolha = (int) (Math.random() * fila.size());
 
             if (fila.isEmpty())//Regressao
             {
+                System.out.println("aqui regress");
                 caminho.removaUmItem();
                 caminho.removaUmItem();
                 if(caminho.isVazia())
                     break;
 
                 atual = caminho.recupereUmItem();
+                continue;
             }
+
+            Coordenada entre = new Coordenada((atual.getX() + fila.get(escolha).getX())/2,
+                                                (atual.getY() + fila.get(escolha).getY())/2);
+            cavar(entre);
+            cavar(fila.get(escolha));
+
+            caminho.guardeUmItem(entre);
+            caminho.guardeUmItem(fila.get(escolha));
+
+            atual = fila.get(escolha);
+            System.out.println("aqui def");
+
+
         }while (true);
         labirinto[saida.getY()][saida.getX()] = 'S';
         if(quebrado) quebrar();
     }
 
     public boolean cavavel(int x, int y) {
-        if(x <= 0 || x >= largura-1) return false;
-        if(y <= 0 || y >= altura-1)  return false;
+        System.out.println("aqui CAVAVEL?");
+
+        try { if(x <= 0 || x >= largura-1) return false; }
+        catch (IndexOutOfBoundsException exception) { return false; }
+        try { if(y <= 0 || y >= altura-1)  return false; }
+        catch (IndexOutOfBoundsException exception) { return false; }
         return labirinto[y][x] == '#';
     }
 
     public void cavar(Coordenada cord) {
+        System.out.println("aqui CAVAR");
         labirinto[cord.getY()][cord.getX()] = ' ';
 
     }
